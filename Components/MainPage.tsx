@@ -5,7 +5,6 @@ import {
   Dimensions,
   Image,
   ImageBackground,
-  ScrollView,
   Text,
   TouchableOpacity,
   View,
@@ -20,7 +19,7 @@ const MainPage = (props: propsType) => {
     navigation.navigate('DictionaryPage');
   };
   return (
-    <ScrollView>
+    <View>
       <ImageBackground
         source={require('./Images/MainBg.png')}
         resizeMode="cover"
@@ -51,7 +50,7 @@ const MainPage = (props: propsType) => {
           </View>
         </View>
       </ImageBackground>
-    </ScrollView>
+    </View>
   );
 };
 
