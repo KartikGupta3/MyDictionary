@@ -10,8 +10,15 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import {StackScreens} from '../App';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+type propsType = NativeStackScreenProps<StackScreens, 'MainPage'>;
 const {height} = Dimensions.get('screen');
-const MainPage = () => {
+const MainPage = (props: propsType) => {
+  const {navigation} = props;
+  const goToDictionary = () => {
+    navigation.navigate('DictionaryPage');
+  };
   return (
     <ScrollView>
       <ImageBackground
@@ -38,7 +45,7 @@ const MainPage = () => {
               alignItems: 'flex-end',
               paddingRight: 50,
             }}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={goToDictionary}>
               <Image source={require('./Images/NextArrow.png')} />
             </TouchableOpacity>
           </View>
